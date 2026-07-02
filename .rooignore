@@ -1,0 +1,44 @@
+# Dependencies and package manager caches
+node_modules/
+.pnpm-store/
+.yarn/
+.npm/
+
+# Build outputs
+.next/
+dist/
+build/
+out/
+coverage/
+.turbo/
+.cache/
+.parcel-cache/
+.vite/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Logs and local databases
+*.log
+logs/
+*.sqlite
+*.sqlite3
+*.db
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/*.log
+
+# Large generated files
+*.zip
+*.tar
+*.tar.gz
+*.7z

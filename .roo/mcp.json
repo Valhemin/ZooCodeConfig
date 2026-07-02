@@ -1,0 +1,108 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "env": {
+        "CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
+      },
+      "timeout": 90,
+      "disabled": false
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-fetch"
+      ],
+      "timeout": 90,
+      "disabled": false
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "timeout": 120,
+      "disabled": false
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant"
+      ],
+      "timeout": 120,
+      "disabled": true
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless"
+      ],
+      "timeout": 120,
+      "disabled": true
+    },
+    "github": {
+      "type": "streamable-http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${env:GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "timeout": 120,
+      "disabled": true
+    },
+    "exa": {
+      "type": "streamable-http",
+      "url": "https://mcp.exa.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:EXA_API_KEY}"
+      },
+      "timeout": 120,
+      "disabled": true
+    },
+    "tavily": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "tavily-mcp@latest"
+      ],
+      "env": {
+        "TAVILY_API_KEY": "${env:TAVILY_API_KEY}"
+      },
+      "timeout": 120,
+      "disabled": true
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "timeout": 60,
+      "disabled": true
+    },
+    "figma": {
+      "type": "streamable-http",
+      "url": "https://mcp.figma.com/mcp",
+      "timeout": 120,
+      "disabled": true
+    },
+    "figma-desktop": {
+      "type": "sse",
+      "url": "http://127.0.0.1:3845/sse",
+      "timeout": 120,
+      "disabled": true
+    }
+  }
+}
