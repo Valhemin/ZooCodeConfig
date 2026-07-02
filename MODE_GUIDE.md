@@ -100,3 +100,19 @@ Debug Pro first. Do not use Implement Pro for unknown failures until root cause 
 ## Core principle
 
 v6 is mode-native. Do not rely on separate slash commands. The workflow is encoded in rules, skills, and templates attached to the active mode.
+
+
+## Final Additions: AgentMemory + Superpowers Methodology
+
+### AgentMemory
+
+Use AgentMemory only for durable, non-sensitive engineering context. Memory is useful for prior decisions, conventions, recurring bugs, and handoff notes. It must never override current code, docs, or explicit user instructions.
+
+### Superpowers-style workflow
+
+Across all modes, prefer engineering process control over ad-hoc coding:
+
+- Spec Pro: brainstorm, clarify, document, and write concrete plans.
+- Implement Pro: execute in small slices, prefer TDD when practical, self-review, and verify before completion.
+- Debug Pro: reproduce, trace, hypothesize, test, fix minimally, and verify.
+- Lead Pro: delegate only when useful, keep context clean, and synthesize readiness evidence.

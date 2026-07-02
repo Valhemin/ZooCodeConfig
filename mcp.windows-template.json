@@ -36,6 +36,22 @@
       "timeout": 120,
       "disabled": false
     },
+    "agentmemory": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@agentmemory/mcp"
+      ],
+      "env": {
+        "AGENTMEMORY_URL": "%AGENTMEMORY_URL%",
+        "AGENTMEMORY_SECRET": "%AGENTMEMORY_SECRET%"
+      },
+      "timeout": 120,
+      "disabled": false,
+      "alwaysAllow": []
+    },
     "serena": {
       "command": "cmd",
       "args": [
@@ -93,17 +109,6 @@
         "TAVILY_API_KEY": "${env:TAVILY_API_KEY}"
       },
       "timeout": 120,
-      "disabled": true
-    },
-    "memory": {
-      "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ],
-      "timeout": 60,
       "disabled": true
     },
     "figma": {
