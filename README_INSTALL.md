@@ -159,3 +159,8 @@ local databases
 - This setup is generic and can be used across many project types.
 - Project-specific conventions should go into `AGENTS.md`, `DESIGN.md`, `.roo/rules-*`, or `.roo/skills-*`.
 - Keep MCP servers minimal. Enable only what the project actually needs.
+
+
+## ECC-inspired additions
+
+ECC-inspired additions are integrated as rules and skills only. There are no slash commands or hooks to install. Copy the folder contents into your project root and reload Zoo Code.

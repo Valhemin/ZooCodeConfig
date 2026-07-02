@@ -27,3 +27,12 @@ Used for:
 ## Note
 
 This package is not a vendor mirror. It keeps the setup generic, drop-in, and mode-native for Zoo Code / Roo-style agents.
+
+
+## ECC
+
+Source: https://github.com/affaan-m/ECC
+
+Integrated selectively as methodology only: search-first, context-budget discipline, harness/config security audit mindset, quality gates, checkpoints, skill stocktake, build-fix loop, and parallelization/worktree discipline.
+
+Not copied wholesale: commands, hooks, dashboard, full agents, full skills, full MCP catalog, hosted app surfaces, or language-specific command shims.

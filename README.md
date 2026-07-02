@@ -97,6 +97,36 @@ This setup does not install the upstream Superpowers plugin directly. Instead, i
 
 This keeps the setup generic and mode-native.
 
+
+## ECC-inspired hardening
+
+This setup selectively ports the strongest generic ideas from ECC without installing ECC itself:
+
+- search-first engineering before custom code
+- context-window and MCP budget discipline
+- harness/config security audit mindset
+- skill stocktake and setup hygiene
+- quality gates before completion claims
+- session checkpoints and durable handoff summaries
+- build-fix loops for failing checks
+- parallelization/worktree discipline for large separable work
+
+It intentionally does **not** include ECC commands, hooks, dashboard, full agent catalog, full MCP catalog, or all ECC skills. The setup remains Zoo mode-native and drop-in.
+
+### ECC command assessment
+
+ECC has many useful commands, but most should not be copied into this setup because this setup is mode-native. The useful command ideas have been converted into skills/rules instead:
+
+- `quality-gate` → `.roo/skills/quality-gate/`
+- `build-fix` → `.roo/skills-implement/build-fix-loop/`
+- `code-review` / `review-pr` → existing review/self-review skills
+- `security-scan` / `harness-audit` → config/security audit skills
+- `checkpoint`, `save-session`, `resume-session` → AgentMemory + session checkpoint skills
+- `skill-health` / `skill-create` → skill stocktake skill
+- `multi-*`, `orch-*`, `epic-*` → Lead Pro decomposition and parallelization skills
+
+Language-specific commands such as `react-build`, `go-test`, `python-review`, etc. are intentionally not included by default. Add stack-specific skills only inside the project that needs them.
+
 ## Recommended Workflow
 
 ### Start a new project

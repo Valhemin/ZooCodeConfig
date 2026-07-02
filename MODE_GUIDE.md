@@ -1,4 +1,4 @@
-# Mode Guide — Zoo Pro Setup v6
+# Mode Guide — Zoo Pro Setup
 
 ## Daily modes
 
@@ -116,3 +116,15 @@ Across all modes, prefer engineering process control over ad-hoc coding:
 - Implement Pro: execute in small slices, prefer TDD when practical, self-review, and verify before completion.
 - Debug Pro: reproduce, trace, hypothesize, test, fix minimally, and verify.
 - Lead Pro: delegate only when useful, keep context clean, and synthesize readiness evidence.
+
+
+## ECC-inspired behavior added
+
+These behaviors are now mode-native, not slash commands:
+
+- Spec Pro uses search-first and requirements-quality discipline before writing plans.
+- Implement Pro uses build-fix loops, quality gates, docs sync, and context budget control.
+- Debug Pro can separate product bugs from Zoo/MCP/harness configuration bugs.
+- Lead Pro can decide when parallelization or worktrees are worth the overhead.
+
+Use commands only if you explicitly add them later. The default workflow remains: choose a mode and ask normally.
