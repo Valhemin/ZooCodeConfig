@@ -8,9 +8,6 @@
         "-y",
         "@upstash/context7-mcp@latest"
       ],
-      "env": {
-        "CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
-      },
       "timeout": 90,
       "disabled": false
     },
@@ -25,17 +22,6 @@
       "timeout": 90,
       "disabled": false
     },
-    "sequential-thinking": {
-      "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "timeout": 120,
-      "disabled": false
-    },
     "agentmemory": {
       "command": "cmd",
       "args": [
@@ -44,10 +30,6 @@
         "-y",
         "@agentmemory/mcp"
       ],
-      "env": {
-        "AGENTMEMORY_URL": "%AGENTMEMORY_URL%",
-        "AGENTMEMORY_SECRET": "%AGENTMEMORY_SECRET%"
-      },
       "timeout": 120,
       "disabled": false,
       "alwaysAllow": []
@@ -75,6 +57,21 @@
         "-y",
         "@playwright/mcp@latest",
         "--headless"
+      ],
+      "timeout": 120,
+      "disabled": true
+    },
+    "chrome-devtools": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--headless",
+        "--isolated",
+        "--no-usage-statistics",
+        "--no-performance-crux"
       ],
       "timeout": 120,
       "disabled": true

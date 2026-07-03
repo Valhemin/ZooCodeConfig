@@ -17,13 +17,9 @@ After copying, your project root should contain:
 .roomodes
 .roo/
 .rooignore
-AGENTS.md
-DESIGN.md
+DESIGN.md          (optional — copy from templates/DESIGN.md.template for UI projects)
 templates/
 MODE_GUIDE.md
-README_INSTALL.md
-CHANGELOG.md
-CORE_EXTRACTION_REPORT.md
 ```
 
 No setup command is required for the Zoo configuration itself.
@@ -161,13 +157,9 @@ Commit these files if you want the agent setup to travel with the repo:
 .roomodes
 .roo/
 .rooignore
-AGENTS.md
-DESIGN.md
 templates/
 MODE_GUIDE.md
-README_INSTALL.md
-CHANGELOG.md
-CORE_EXTRACTION_REPORT.md
+DESIGN.md          (if created for the project)
 ```
 
 Do not commit:
