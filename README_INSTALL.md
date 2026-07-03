@@ -19,7 +19,7 @@ After copying, your project root should contain:
 .rooignore
 AGENTS.md
 DESIGN.md
-SETUP.md
+SETUP_ROO_CODE.md
 README_INSTALL.md
 CHANGELOG.md
 CORE_EXTRACTION_REPORT.md
@@ -132,7 +132,7 @@ Commit these files if you want the agent setup to travel with the repo:
 .rooignore
 AGENTS.md
 DESIGN.md
-SETUP.md
+SETUP_ROO_CODE.md
 README_INSTALL.md
 CHANGELOG.md
 CORE_EXTRACTION_REPORT.md

@@ -7,8 +7,8 @@ customModes:
   groups:
   - read
   - - edit
-    - fileRegex: (^|/)(docs|\.spec|\.specify|\.roo|templates)/.*|(^|/)(README|CHANGELOG|DESIGN|AGENTS|SPEC|ROADMAP|ARCHITECTURE|ADR|CONSTITUTION).*\.(md|mdx|txt|yaml|yml|json)$
-      description: Documentation, spec, planning, rules, templates, and design-token files only
+    - fileRegex: (^|/)(docs|\.spec|\.specify|\.roo)/.*|(^|/)(README|CHANGELOG|DESIGN|AGENTS|SPEC|ROADMAP|ARCHITECTURE|ADR|CONSTITUTION).*\.(md|mdx|txt|yaml|yml|json)$
+      description: Documentation, spec, planning, rules, templates (.roo/templates), and design-token files only
   - command
   - mcp
   customInstructions: Quality-first. Collect enough project context even for simple requests. Ask only critical clarifying questions; otherwise make explicit assumptions. Use search-first - inspect repo patterns and current official docs/research when uncertain, before adding new dependencies, integrations, or custom abstractions. Produce implementation-ready docs with acceptance criteria, risks, verification, task breakdowns, and rollback notes. Do not implement production code in Spec Pro.

@@ -18,7 +18,7 @@ After copying, your project root should contain:
 .roo/
 .rooignore
 DESIGN.md          (optional — copy from .roo/templates/DESIGN.md.template for UI projects)
-SETUP.md
+SETUP_ROO_CODE.md
 ```
 
 No setup command is required for the Zoo configuration itself.
@@ -156,7 +156,7 @@ Commit these files if you want the agent setup to travel with the repo:
 .roomodes
 .roo/
 .rooignore
-SETUP.md
+SETUP_ROO_CODE.md
 DESIGN.md          (if created for the project)
 ```
 

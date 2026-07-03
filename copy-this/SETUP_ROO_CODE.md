@@ -1,6 +1,8 @@
-# Mode Guide — Zoo Pro Setup
+# Setup Guide — Zoo Pro Setup
 
-## Daily modes
+Read this file to understand modes, MCP servers, and workflows before using the setup.
+
+## Modes
 
 ### 📋 Spec Pro
 
@@ -14,51 +16,26 @@ Best for:
 - Task plans before implementation
 - Read-only analysis across spec/plan/tasks
 
-Default output style:
-- Facts / assumptions / unknowns when ambiguous
-- Acceptance criteria
-- Risks and edge cases
-- Verification plan
-- File paths for generated docs
-
 ### ⚒️ Implement Pro
 
 Use for coding and production delivery.
 
 Best for:
 - Implementing from spec/task docs
-- Refactors
-- Tests/checks
-- UI polish
+- Refactors, tests, UI polish
 - Backend/frontend integration
-- Documentation updates that must match code
-
-Expected behavior:
-- Read relevant docs/code first
-- Implement one coherent scope at a time
-- Self-review after each scope
-- Verify before moving on
-- Mark tasks done only after actual completion
-- Report failures/skips honestly
+- Browser testing (Playwright MCP) and visual QA
+- Figma-to-code (Figma MCP)
 
 ### 🐞 Debug Pro
 
 Use for failures and unexpected behavior.
 
 Best for:
-- Failing tests
-- Runtime errors
-- Broken UI
-- Performance issues
-- Regressions
-- Flaky behavior
-
-Expected behavior:
-- Reproduce or narrow first
-- Hypothesize with evidence
-- Patch minimally
-- Add regression coverage where practical
-- Verify original failure path
+- Failing tests, runtime errors, broken UI
+- Performance issues (Chrome DevTools MCP)
+- Regressions, flaky behavior
+- Click-path audits (state interaction bugs)
 
 ### 🧭 Lead Pro
 
@@ -66,18 +43,25 @@ Use for large work, not simple direct edits.
 
 Best for:
 - Starting a new project
-- Full feature delivery
-- Large migrations/refactors
-- Multi-phase work
+- Full feature delivery, large migrations
+- GitHub workflow (GitHub MCP) — PR/issue management
 - Coordinating Spec → Implement → Debug → Readiness
 
-Expected behavior:
-- Build context map
-- Identify critical unknowns
-- Create delivery roadmap
-- Delegate to the right mode
-- Keep parent context clean
-- Synthesize production-readiness status
+## MCP Servers
+
+| MCP | Purpose | Default | API key needed |
+|---|---|---|---|
+| **context7** | Library/framework docs | enabled | No |
+| **agentmemory** | Memory across sessions | enabled | No |
+| **tavily** | Web search (articles, issues) | disabled | `TAVILY_API_KEY` |
+| **brave-search** | Web search (broad, news) | disabled | `BRAVE_API_KEY` |
+| **playwright** | Browser automation, UI testing | disabled | No |
+| **chrome-devtools** | Performance, network debug | disabled | No |
+| **github** | PR/issue management | disabled | `GITHUB_PERSONAL_ACCESS_TOKEN` |
+| **figma** | Figma cloud design access | disabled | No (browser auth) |
+| **figma-desktop** | Local Figma Desktop access | disabled | No (app running) |
+
+**Enable/disable**: set `"disabled": false/true` in `.roo/mcp.json`. Keep disabled MCPs off until needed — each adds token overhead.
 
 ## Recommended flows
 
@@ -91,40 +75,24 @@ Spec Pro → clarify critical gaps → plan/research → tasks → consistency a
 
 ### Small direct change
 
-Implement Pro can handle it directly, but it should still collect enough context and verify.
+Implement Pro directly. Still collects context and verifies.
 
 ### Bug
 
 Debug Pro first. Do not use Implement Pro for unknown failures until root cause is clear.
 
-## Core principle
+### UI feature with design
 
-v6 is mode-native. Do not rely on separate slash commands. The workflow is encoded in rules, skills, and templates attached to the active mode.
+Enable Figma MCP → Implement Pro (figma-to-code skill) → enable Playwright MCP → visual QA → ship
 
+### Performance issue
 
-## Final Additions: AgentMemory + Superpowers Methodology
+Enable Chrome DevTools MCP → Debug Pro (chrome-devtools-debugging skill) → fix → verify metrics
 
-### AgentMemory
+## Core principles
 
-Use AgentMemory only for durable, non-sensitive engineering context. Memory is useful for prior decisions, conventions, recurring bugs, and handoff notes. It must never override current code, docs, or explicit user instructions.
-
-### Superpowers-style workflow
-
-Across all modes, prefer engineering process control over ad-hoc coding:
-
-- Spec Pro: brainstorm, clarify, document, and write concrete plans.
-- Implement Pro: execute in small slices, prefer TDD when practical, self-review, and verify before completion.
-- Debug Pro: reproduce, trace, hypothesize, test, fix minimally, and verify.
-- Lead Pro: delegate only when useful, keep context clean, and synthesize readiness evidence.
-
-
-## ECC-inspired behavior added
-
-These behaviors are now mode-native, not slash commands:
-
-- Spec Pro uses search-first and requirements-quality discipline before writing plans.
-- Implement Pro uses build-fix loops, quality gates, docs sync, and context budget control.
-- Debug Pro can separate product bugs from Zoo/MCP/harness configuration bugs.
-- Lead Pro can decide when parallelization or worktrees are worth the overhead.
-
-Use commands only if you explicitly add them later. The default workflow remains: choose a mode and ask normally.
+- **Mode-native**: workflow is encoded in rules, skills, and templates. No slash commands needed.
+- **Search-first**: check project patterns and Context7 docs before building custom solutions.
+- **MCP-minimal**: enable only what the current task needs, disable after.
+- **AgentMemory**: durable engineering context only. Never overrides current code or user instructions.
+- **Verify before completion**: every task needs evidence of passing, not just claims.

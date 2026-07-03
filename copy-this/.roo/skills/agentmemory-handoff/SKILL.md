@@ -1,17 +1,32 @@
 ---
 name: agentmemory-handoff
-description: Create or recall handoff summaries for long-running work across sessions or agents.
+description: Create session checkpoints and handoff summaries for long-running work across sessions, modes, or agents.
 ---
 
-Use at the end of a substantial session, before compaction, or before delegating to another mode/subtask.
+Use at the end of a substantial session, before compaction, before switching mode, after completing a phase, or before delegating to another mode/subtask.
 
-Handoff format:
-- Goal
-- Current status
-- Decisions made
-- Files changed or relevant files
-- Verification already run
-- Known blockers/risks
-- Next recommended step
+## When to Trigger
 
-Save only durable context. Do not store secrets or sensitive data.
+- Context getting large (nearing compaction).
+- Switching between modes (Spec → Implement, Debug → Implement).
+- Completing a delivery phase.
+- Before stopping work for the day.
+- Before delegating to a subtask/subagent.
+
+## Checkpoint Format
+
+Capture:
+- **Goal** — what we're trying to achieve.
+- **Current phase/scope** — where we are in the workflow.
+- **Decisions made** — architecture, tech choices, tradeoffs accepted.
+- **Files changed** — or files intended to change next.
+- **Verification run** — checks/tests executed and results.
+- **Open risks/blockers** — what could go wrong or is blocking.
+- **Next recommended step** — exact action for the next session/mode.
+
+## Storage Rules
+
+- Save only durable, non-sensitive engineering context to AgentMemory.
+- Do not store secrets, tokens, credentials, customer data, raw logs, or transient command output.
+- If the checkpoint contains only session-local info (no cross-session value), skip AgentMemory — summarize in chat instead.
+- Verify current repo state before acting on recalled handoff — code may have changed since last session.

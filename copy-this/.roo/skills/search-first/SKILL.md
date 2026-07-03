@@ -5,14 +5,15 @@ Use when starting a non-trivial feature, adding a dependency/integration, writin
 ## Workflow
 
 1. Check project-local patterns first: existing modules, services, components, tests, docs, and conventions.
-2. If current framework/library behavior matters, research official/current docs with Context7 or approved research MCPs.
-3. Compare at least two paths when appropriate:
+2. If current framework/library behavior matters, research official/current docs with **Context7** (`resolve-library-id` → `get-library-docs`).
+3. If Context7 lacks coverage, use **Tavily** or **Brave Search** MCP for recent articles, issues, and migration notes (enable first — disabled by default).
+4. Compare at least two paths when appropriate:
    - reuse existing project pattern
    - use a standard library/framework feature
    - add a dependency
    - custom implementation
-4. Choose the smallest maintainable path with clear tradeoffs.
-5. Document assumptions, source of truth, and why alternatives were rejected.
+5. Choose the smallest maintainable path with clear tradeoffs.
+6. Document assumptions, source of truth, and why alternatives were rejected.
 
 ## Output Contract
 

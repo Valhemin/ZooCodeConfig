@@ -24,7 +24,7 @@ Mục tiêu của setup này là biến Zoo Code thành workflow coding agent ch
 ├── .rooignore
 ├── AGENTS.md
 ├── DESIGN.md
-├── SETUP.md
+├── SETUP_ROO_CODE.md
 ├── README_INSTALL.md
 ├── CHANGELOG.md
 └── CORE_EXTRACTION_REPORT.md
@@ -54,7 +54,7 @@ your-project/
 ├── .rooignore
 ├── AGENTS.md
 ├── DESIGN.md
-├── SETUP.md
+├── SETUP_ROO_CODE.md
 └── ...
 ```
 
@@ -129,7 +129,7 @@ Nên commit:
 .rooignore
 AGENTS.md
 DESIGN.md
-SETUP.md
+SETUP_ROO_CODE.md
 README_INSTALL.md
 CHANGELOG.md
 CORE_EXTRACTION_REPORT.md
