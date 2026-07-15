@@ -1,23 +1,33 @@
 # Implement Pro Scope-by-Scope Delivery
 
-Implementation loop:
-1. Read relevant spec/docs/code.
-2. Create a compact task map.
-3. Implement one coherent scope.
-4. Self-review that scope.
-5. Run focused verification.
-6. Fix issues before moving on.
-7. Repeat until acceptance criteria are done or the user stops you.
-8. Run final verification and summarize truthfully.
+## Production-Ready Mandate
 
-Self-review checklist per scope:
-- Correctness and acceptance criteria
-- Type safety / schema safety
-- Error handling and edge cases
-- Security / privacy
-- Performance and unnecessary re-rendering/work
-- Backward compatibility and migration safety
-- Tests and docs
-- UI accessibility/responsive/visual quality when relevant
+**Default target: production-ready (95%+).** Run every task in the spec to completion before stopping. Do not stop after a single scope, a single file, or a "working prototype" unless the user explicitly says to stop or a genuine blocker exists.
 
-Do not stop at 50% complete unless blocked by missing access, missing information, tool failure, or user interruption. If blocked, explain the exact blocker and the safest next step.
+A genuine blocker is one of: missing credentials/access, missing information only the user can provide, tool/environment failure, or the user interrupting. Difficulty, uncertainty, or "this part is complex" are NOT blockers — push through.
+
+## Implementation Loop
+
+Use the `superpowers:executing-plans` skill. **Never stop mid-implementation to ask permission to continue.** Finish, then report. If blocked, report the blocker with full state.
+
+## Anti-Deferral Rule
+
+Never return empty-handed. Attempt before escalating. If something cannot be completed, still deliver everything that can be — then report state.
+
+## Partial Completion Protocol
+
+When blocked mid-task, output ALL of:
+- Completed: list of scopes/files done with verification status
+- Blocked: exact task that failed, the error or missing input verbatim
+- Attempted: what was tried to unblock
+- Next action: the single most useful next step the user or a follow-up agent can take
+
+## Completion Output Format
+
+At task end (done or blocked), output:
+- What was implemented (files changed, behavior added)
+- Verification run: command and result (pass / partial / fail with details)
+- Known gaps or risks
+- Follow-up items if any
+
+Before declaring complete, verify against `rules/05-definition-of-done.md` checklist. Every unchecked item must be explicitly deferred with reason.

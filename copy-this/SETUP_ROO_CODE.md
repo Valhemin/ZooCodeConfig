@@ -4,7 +4,7 @@ Read this file to understand modes, MCP servers, and workflows before using the 
 
 ## Modes
 
-### 📋 Spec Pro
+### 📋 Architect Pro
 
 Use for requirements, specs, clarification, planning, UX/UI docs, architecture, task generation, and consistency analysis.
 
@@ -37,16 +37,6 @@ Best for:
 - Regressions, flaky behavior
 - Click-path audits (state interaction bugs)
 
-### 🧭 Lead Pro
-
-Use for large work, not simple direct edits.
-
-Best for:
-- Starting a new project
-- Full feature delivery, large migrations
-- GitHub workflow (GitHub MCP) — PR/issue management
-- Coordinating Spec → Implement → Debug → Readiness
-
 ## MCP Servers
 
 | MCP | Purpose | Default | API key needed |
@@ -67,11 +57,11 @@ Best for:
 
 ### New project
 
-Lead Pro → Spec Pro → Lead Pro → Implement Pro → Debug Pro when needed → Lead Pro readiness summary
+Architect Pro → Implement Pro → Debug Pro when needed → Architect Pro readiness summary
 
 ### Feature with unclear requirements
 
-Spec Pro → clarify critical gaps → plan/research → tasks → consistency analysis → Implement Pro
+Architect Pro → clarify critical gaps → plan/research → tasks → consistency analysis → Implement Pro
 
 ### Small direct change
 

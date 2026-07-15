@@ -1,3 +1,9 @@
+TRIGGER: after implementation changes public behavior, APIs, setup, environment variables, UX flows, configuration, or operational procedures
+OUTPUT: compact — changed docs listed with what was updated, any intentionally skipped docs noted
+SKIP: internal refactors with no observable behavior change for users or integrators
+
+---
+
 # Docs Sync
 
 Use after implementation changes public behavior, APIs, setup, environment variables, UX flows, configuration, or operational procedures.

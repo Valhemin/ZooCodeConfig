@@ -3,6 +3,13 @@ name: agentmemory-handoff
 description: Create session checkpoints and handoff summaries for long-running work across sessions, modes, or agents.
 ---
 
+TRIGGER: context nearing compaction, switching modes, completing a delivery phase, or before delegating to another agent
+OUTPUT: compact — checkpoint with goal, current phase, decisions, files changed, verification run, open risks, next step
+SKIP: short sessions with no cross-session value or any checkpoint containing secrets or sensitive data
+
+---
+
+
 Use at the end of a substantial session, before compaction, before switching mode, after completing a phase, or before delegating to another mode/subtask.
 
 ## When to Trigger

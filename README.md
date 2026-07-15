@@ -9,7 +9,7 @@ This setup is designed for multi-project use. It keeps the workflow mode-native:
 1. Extract this folder.
 2. Copy everything inside this folder into the root of the project you want to use it with.
 3. Reload VS Code / Zoo Code.
-4. Select one of the four modes.
+4. Select one of the three modes.
 
 After copying, your project root should contain:
 
@@ -27,10 +27,9 @@ No setup command is required for the Zoo configuration itself.
 
 | Mode | Use for |
 | --- | --- |
-| 📋 Spec Pro | Product requirements, specs, architecture, UX/UI docs, implementation plans, task breakdowns, checklists, and consistency analysis |
+| 📋 Architect Pro | Product requirements, specs, architecture, UX/UI docs, implementation plans, task breakdowns, checklists, and consistency analysis |
 | ⚒️ Implement Pro | Production-ready implementation from specs/tasks, scope-by-scope delivery, self-review, verification, and docs updates |
 | 🐞 Debug Pro | Evidence-driven reproduction, root cause analysis, minimal fixes, regression coverage, and verification |
-| 🧭 Lead Pro | New projects, large features, decomposition, delegation, roadmap control, and production-readiness synthesis |
 
 ## AgentMemory
 
@@ -118,7 +117,7 @@ ECC has many useful commands, but most should not be copied into this setup beca
 - `security-scan` / `harness-audit` → config/security audit skills
 - `checkpoint`, `save-session`, `resume-session` → AgentMemory + session checkpoint skills
 - `skill-health` / `skill-create` → skill stocktake skill
-- `multi-*`, `orch-*`, `epic-*` → Lead Pro decomposition and parallelization skills
+- `multi-*`, `orch-*`, `epic-*` → Architect Pro decomposition and parallelization skills
 
 Language-specific commands such as `react-build`, `go-test`, `python-review`, etc. are intentionally not included by default. Add stack-specific skills only inside the project that needs them.
 
@@ -127,13 +126,13 @@ Language-specific commands such as `react-build`, `go-test`, `python-review`, et
 ### Start a new project
 
 ```text
-Use Lead Pro. Start a new production-ready project: [project description]. Collect context, identify critical unknowns, create a delivery roadmap, and delegate Spec Pro to produce the first spec pack before implementation.
+Use Architect Pro. Start a new production-ready project: [project description]. Collect context, identify critical unknowns, create a delivery roadmap, and delegate Architect Pro to produce the first spec pack before implementation.
 ```
 
 ### Create a feature spec
 
 ```text
-Use Spec Pro. Create a production-ready spec pack for [feature]. Clarify only critical gaps, research current official docs when uncertain, create requirements, architecture, tasks, checklist, and consistency analysis.
+Use Architect Pro. Create a production-ready spec pack for [feature]. Clarify only critical gaps, research current official docs when uncertain, create requirements, architecture, tasks, checklist, and consistency analysis.
 ```
 
 ### Implement a feature

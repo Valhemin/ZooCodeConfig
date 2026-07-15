@@ -3,6 +3,13 @@ name: figma-to-code
 description: Convert Figma designs to code using Figma MCP (cloud) or Figma Desktop MCP (local). Enable one before use.
 ---
 
+TRIGGER: a Figma link, selection, or design reference is provided
+OUTPUT: detailed — components created/modified with paths, tokens added/reused, design decisions, state gaps flagged
+SKIP: UI implementation without a Figma reference (use design-taste-frontend instead)
+
+---
+
+
 Use when a Figma link, selection, or design reference is provided.
 
 ## MCP Options

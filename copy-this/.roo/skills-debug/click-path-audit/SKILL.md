@@ -3,6 +3,13 @@ name: click-path-audit
 description: Trace every interactive touchpoint through its full state change sequence to find bugs where handlers silently undo each other or leave inconsistent state.
 ---
 
+TRIGGER: interactive UI elements appear to 'do nothing' or state is wrong after A→B sequences despite code looking correct
+OUTPUT: detailed — per-touchpoint trace of state reads/writes with conflict findings and severity
+SKIP: backend logic bugs or server-side failures unrelated to UI event handlers
+
+---
+
+
 Find bugs that static code reading and unit tests miss: state interaction side effects, race conditions between sequential calls, and handlers that silently undo each other.
 
 ## When to Use
@@ -49,10 +56,22 @@ Handler calls:
 Result: composeMode = false  → Button does nothing
 ```
 
-## Output
+## Partial Findings Rule
+
+If no conflict is found after full audit, still report:
+- Every touchpoint traced (even clean ones — list them).
+- Exact state flow for each handler (reads, writes, side effects).
+- What was ruled out and why.
+- If no bugs found: confirm with "audit complete — no conflicts detected" plus the touchpoint list.
+
+Never return "nothing looks wrong." Provide the trace so the user can verify.
+
+## Output Contract
 
 Per touchpoint:
 - Handler chain with state reads/writes.
-- Conflicts found (with evidence).
-- Fix recommendation.
+- Conflicts found (with evidence) or "no conflict — [reason]".
+- Fix recommendation (if conflict exists).
 - Severity: critical (feature broken) / major (inconsistent state) / minor (cosmetic).
+
+Summary at end: total touchpoints audited, conflicts found, fixes applied.

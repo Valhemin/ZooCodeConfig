@@ -3,6 +3,13 @@ name: requesting-code-review
 description: Review a completed slice before continuing.
 ---
 
+TRIGGER: after each meaningful implementation slice before continuing to the next slice
+OUTPUT: compact — review findings per dimension, block/fix/risk classification
+SKIP: trivial formatting or comment-only changes with no logic impact
+
+---
+
+
 Use after each meaningful implementation slice.
 
 Review dimensions:

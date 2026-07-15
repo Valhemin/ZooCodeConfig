@@ -32,14 +32,13 @@ Mục tiêu của setup này là biến Zoo Code thành workflow coding agent ch
 
 ## Modes
 
-Setup này dùng 4 mode chính:
+Setup này dùng 3 mode chính:
 
 | Mode             | Vai trò                                                                                    |
 | ---------------- | ------------------------------------------------------------------------------------------ |
-| 📋 Spec Pro      | Tạo spec, docs, architecture, requirements, implementation plan, test plan, risk analysis  |
+| 📋 Architect Pro | Tạo spec, docs, architecture, requirements, implementation plan, test plan, risk analysis  |
 | ⚒️ Implement Pro | Implement theo spec/tasks, tự review từng scope, verify liên tục, hướng production-ready   |
 | 🐞 Debug Pro     | Nắm context, reproduce lỗi, tìm root cause, fix nhỏ nhất an toàn, thêm regression coverage |
-| 🧭 Lead Pro      | Dùng cho project lớn: chia phase, điều phối Spec/Implement/Debug, giữ roadmap và readiness |
 
 ## Cách dùng trong project
 
@@ -65,13 +64,13 @@ Sau đó reload VS Code/Zoo Code. Không cần chạy lệnh setup.
 ### Bắt đầu project mới
 
 ```text
-Use Lead Pro. Start a new production-ready project: [mô tả dự án]. Collect context, identify critical unknowns, create a delivery roadmap, and delegate Spec Pro to produce the first spec pack before implementation.
+Use Architect Pro. Start a new production-ready project: [mô tả dự án]. Collect context, identify critical unknowns, create a delivery roadmap, and delegate Architect Pro to produce the first spec pack before implementation.
 ```
 
 ### Tạo spec cho feature
 
 ```text
-Use Spec Pro. Create a production-ready spec pack for [feature]. Clarify only critical gaps, research current official docs when uncertain, create requirements, architecture, tasks, checklist, and consistency analysis.
+Use Architect Pro. Create a production-ready spec pack for [feature]. Clarify only critical gaps, research current official docs when uncertain, create requirements, architecture, tasks, checklist, and consistency analysis.
 ```
 
 ### Implement feature

@@ -3,6 +3,13 @@ name: chrome-devtools-debugging
 description: Debug frontend performance, network, and rendering issues using Chrome DevTools MCP. Enable MCP before use.
 ---
 
+TRIGGER: debugging frontend performance, network waterfall, rendering, or browser memory issues that Playwright alone cannot surface
+OUTPUT: detailed — findings with metrics, root cause hypothesis, fix recommendations, before/after verification
+SKIP: backend HTTP failures or pure interaction/screenshot testing (use playwright instead)
+
+---
+
+
 Use for performance debugging, network inspection, rendering issues, and runtime analysis that Playwright alone cannot surface.
 
 ## MCP Tools
@@ -47,9 +54,21 @@ Enable `chrome-devtools` MCP before use (disabled by default).
 3. Check for unhandled promise rejections.
 4. Inspect event listeners on problematic elements.
 
-## Output
+## Partial Findings Rule
 
-- Specific findings with evidence (network timings, DOM counts, error messages).
-- Root cause analysis.
-- Fix recommendations ranked by impact.
-- Before/after metrics when fix is applied.
+If root cause is unclear after all protocols, still report:
+- Every metric gathered (timings, DOM count, error list).
+- Which categories were inspected and their verdict.
+- Best current hypothesis with the specific metric that supports it.
+- Single next step (e.g., "profile with CPU throttling to isolate JS cost").
+
+Never return "I couldn't find the issue." Report what was found and what it rules out.
+
+## Output Contract
+
+Every response must include:
+- **Findings**: specific metrics with evidence (timings, counts, error strings).
+- **Hypotheses checked**: each with verdict.
+- **Root cause / best hypothesis**: with supporting evidence.
+- **Fix recommendations**: ranked by impact, with expected before/after.
+- **Verification**: before/after metrics after fix applied (if applicable).

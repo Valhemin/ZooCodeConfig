@@ -3,6 +3,20 @@ name: visual-qa-playwright
 description: Automated visual QA, interaction testing, visual regression, and accessibility audits using Playwright MCP. Enable MCP before use.
 ---
 
+TRIGGER: user explicitly requests visual QA, visual regression, accessibility audit, Playwright testing, or browser screenshot comparison
+OUTPUT: report — QA report with smoke/interaction/visual regression/accessibility phases and GO/NO-GO ship recommendation
+SKIP: automatically after any implementation without explicit user request; never trigger on backend-only changes
+
+---
+
+
+## When to Use / When NOT to Use
+
+**Only when user explicitly requests E2E or UI testing.** Never trigger automatically after implementation.
+
+**Use when:** User asks for visual QA, visual regression, accessibility audit, Playwright testing, browser screenshot comparison, or UI interaction testing.
+**Do NOT use:** After API or backend implementation. After frontend implementation unless user specifically asks. Never run automatically as a default post-implementation step.
+
 Use for UI changes when browser verification is needed. Requires Playwright MCP (disabled by default — enable before use).
 
 ## MCP Tools

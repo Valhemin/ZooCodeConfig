@@ -3,6 +3,13 @@ name: context-window-management
 description: Manage context window budget — load minimally, summarize aggressively, audit token overhead from skills/rules/MCPs.
 ---
 
+TRIGGER: task touches many files, large logs, long generated code, or session output quality degrades due to context pressure
+OUTPUT: compact — audit of token overhead per component, oversized items flagged, recommendations to trim or disable
+SKIP: short focused tasks with few files and no context pressure
+
+---
+
+
 Use when a task touches many files, long logs, generated code, large docs, or multiple subtasks. Also use periodically to audit context overhead.
 
 ## Loading Rules

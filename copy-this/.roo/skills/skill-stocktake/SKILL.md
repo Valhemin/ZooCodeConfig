@@ -3,6 +3,13 @@ name: skill-stocktake
 description: Audit and garbage-collect skills, rules, MCPs, and config for bloat, redundancy, and staleness.
 ---
 
+TRIGGER: agent setup feels bloated or duplicated, after adding a new skill pack, or as periodic monthly maintenance
+OUTPUT: report — keep/merge/move/disable/remove table with rationale, token/context impact, recommended file moves, total token savings
+SKIP: during active implementation sessions; run as a dedicated maintenance task only
+
+---
+
+
 Use when the agent setup feels bloated, duplicated, stale, after adding a new skill pack, or as periodic maintenance (~monthly).
 
 ## Scan Channels

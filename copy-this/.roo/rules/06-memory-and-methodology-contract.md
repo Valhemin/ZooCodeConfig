@@ -13,10 +13,4 @@ Before acting on memory, verify the current repository files and docs. Code, tes
 
 Never store secrets, credentials, API keys, tokens, private keys, personal sensitive data, customer data, or unreleased confidential business data unless the user explicitly asks and the storage location is approved.
 
-Use Superpowers-style discipline by default:
-- brainstorm before coding when the goal is ambiguous
-- write plans with exact files, acceptance criteria, and verification
-- execute in small slices with checkpoints
-- prefer TDD when the project has tests or tests are practical
-- verify before completion; evidence beats claims
-- reduce complexity; do not over-engineer
+Use Superpowers skills by default: `superpowers:brainstorming` when goal is ambiguous, `superpowers:writing-plans` before large implementation, `superpowers:test-driven-development` when tests are practical, `superpowers:verification-before-completion` before claiming done.

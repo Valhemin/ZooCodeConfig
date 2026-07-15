@@ -3,6 +3,20 @@ name: browser-testing-workflow
 description: End-to-end browser testing workflow combining Playwright (interaction) and Chrome DevTools (performance). Enable MCPs before use.
 ---
 
+TRIGGER: user explicitly requests E2E testing, browser testing, UI verification, visual QA, or Playwright/DevTools testing
+OUTPUT: report — pass/fail per phase (smoke, interaction, performance) with screenshots and performance metrics
+SKIP: automatically after any implementation without an explicit user request
+
+---
+
+
+## When to Use / When NOT to Use
+
+**Only when user explicitly requests E2E or UI testing.** Never trigger automatically after implementation.
+
+**Use when:** User asks for browser testing, E2E testing, UI verification, visual QA, performance testing, or Playwright/DevTools testing.
+**Do NOT use:** After any implementation without an explicit user request. API changes, backend logic, refactors, or pure frontend component work do not trigger this skill automatically.
+
 Use after implementing UI features to verify both visual correctness and performance before shipping.
 
 ## MCP Requirements

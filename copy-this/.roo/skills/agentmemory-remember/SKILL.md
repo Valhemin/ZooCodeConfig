@@ -3,6 +3,13 @@ name: agentmemory-remember
 description: Save stable, non-sensitive engineering context to AgentMemory.
 ---
 
+TRIGGER: after important decisions, completed milestones, repeated debugging discoveries, or handoff-worthy context
+OUTPUT: compact — concise memory entry saved with project/feature scope and date
+SKIP: temporary speculation, secrets, tokens, credentials, customer data, raw logs, or session-local info
+
+---
+
+
 Use after important decisions, completed milestones, repeated debugging discoveries, or handoff-worthy context.
 
 Good memories:

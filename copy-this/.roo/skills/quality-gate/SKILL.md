@@ -1,3 +1,9 @@
+TRIGGER: before declaring a feature, fix, refactor, migration, or release-ready state complete
+OUTPUT: compact — evidence per gate item, one status label (Ready / Ready with risks / Blocked / Not ready)
+SKIP: intermediate implementation steps that are not completion claims
+
+---
+
 # Quality Gate
 
 Use before declaring a feature, fix, refactor, migration, or release-ready state complete.

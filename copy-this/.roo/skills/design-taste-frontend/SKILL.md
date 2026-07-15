@@ -1,3 +1,9 @@
+TRIGGER: frontend/UI implementation or redesign work
+OUTPUT: compact — design pattern guidance applied for hierarchy, asymmetry, product-specific context, and strong edge states
+SKIP: backend or API work with no frontend surface
+
+---
+
 # Design Taste Frontend
 
 Use for frontend/UI implementation and redesigns.

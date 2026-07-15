@@ -3,6 +3,13 @@ name: web-research
 description: Search the web for current information using Tavily or Brave Search MCP when project docs and Context7 are insufficient.
 ---
 
+TRIGGER: need current web information that Context7 and project docs cannot provide — recent releases, community discussions, security advisories
+OUTPUT: compact — findings with source attribution, confidence level (single vs cross-verified), remaining uncertainties
+SKIP: questions answerable from Context7 or project docs — search those first before enabling web search MCPs
+
+---
+
+
 Use when you need current web information that Context7 and project docs cannot provide: recent releases, community discussions, comparisons, migration guides, security advisories.
 
 ## MCP Tools

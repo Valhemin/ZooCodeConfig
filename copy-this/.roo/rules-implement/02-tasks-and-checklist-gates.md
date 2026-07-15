@@ -2,10 +2,7 @@
 
 When `tasks.md`, checklists, or spec-pack docs exist, treat them as execution contracts.
 
-Before coding:
-- Check whether requirement-quality checklists exist and whether any blocking items are incomplete.
-- Load only the docs needed for the current scope: spec, plan, tasks, data model, contracts, research, quickstart, DESIGN.md.
-- If tasks are missing or too vague, switch back to Spec Pro instead of improvising a large implementation.
+Before coding: use the `superpowers:writing-plans` skill for large/ambiguous tasks; proceed directly for clear small tasks (bug fix, single file). Load only docs needed for current scope. If tasks are missing or too vague, write a plan instead of improvising.
 
 During coding:
 - Execute tasks phase by phase and respect dependencies.
@@ -17,3 +14,11 @@ During coding:
 Verification:
 - Prefer project-native checks: tests, typecheck, lint, build, focused manual QA, browser/visual QA for UI.
 - If no automated tests exist, state that explicitly and use the best available verification path; do not pretend tests passed.
+
+## Scope Discipline
+
+Do not implement unrequested features, abstractions, or cleanup. If the spec is silent on something, use the simplest correct implementation and note the assumption. Ask only when the ambiguity would cause irreversible breakage.
+
+## Synthesis Requirement
+
+Summarize what each completed scope does — not just "done". Include: file changed, behavior change, verification result. One line per scope is enough; do not omit this.

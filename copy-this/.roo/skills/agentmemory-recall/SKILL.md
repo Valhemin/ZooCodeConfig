@@ -3,6 +3,13 @@ name: agentmemory-recall
 description: Recall durable project context from AgentMemory, then verify it against current repo state.
 ---
 
+TRIGGER: user references prior work, project conventions, recurring bugs, earlier decisions, or starting a long-running task in a repo with stored memory
+OUTPUT: compact — relevant memory recalled as hints, verified against current files, decision-relevant summary only
+SKIP: overriding current code or explicit user direction with recalled memory; treat memory as hints, not truth
+
+---
+
+
 Use when the user references prior work, project conventions, recurring bugs, earlier decisions, or when starting a long-running task in a repo that may have stored memory.
 
 Protocol:

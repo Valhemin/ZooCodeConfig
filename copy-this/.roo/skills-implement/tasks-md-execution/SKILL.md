@@ -3,6 +3,13 @@ name: tasks-md-execution
 description: Execute tasks.md phase-by-phase with checklist gates, per-scope self-review, and truthful verification.
 ---
 
+TRIGGER: implementing tasks from a tasks.md file phase-by-phase with checklist gates
+OUTPUT: compact — task marked complete only after real verification, blocked task with exact error verbatim, next action
+SKIP: free-form implementation without a tasks.md driving the work
+
+---
+
+
 When implementing from `tasks.md`:
 
 1. Check checklist status first.
@@ -15,3 +22,7 @@ When implementing from `tasks.md`:
 8. Continue until all requested tasks are done, blocked, or user stops you.
 
 Never claim passed verification without running it. If tests don't exist, report the gap and use available build/typecheck/lint/manual checks.
+
+## Post-Task API Testing
+
+After completing any task that adds or modifies a backend endpoint or API handler: run `api-testing` skill. This is default — no explicit user request needed. Skip only for pure frontend tasks or when the user explicitly says "skip tests".

@@ -1,3 +1,9 @@
+TRIGGER: build, typecheck, lint, or tests fail during implementation
+OUTPUT: compact — first meaningful failure extracted, smallest fix applied, focused check re-run until pass
+SKIP: silencing errors by deleting assertions, weakening types, or broad try/catch
+
+---
+
 # Build Fix Loop
 
 Use when build, typecheck, lint, or tests fail during implementation.
